@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">    
+    <title>Welcome</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/nysl_3.css">
+    <link rel="shortcut icon" href="./css/images/nysl_logo.png" type="image/x-icon">
+
+</head>
+<body  onload="load(), paginacion(), ocultarSecciones('welcome')">
+    
+    <section name="secciones" id="welcome">
+      <div class="capa"></div>
+        <video id="videoBG" autoplay muted loop>
+            <source src="./video/video-background.mp4" type="video/mp4">
+        </video>
+
+        <div id="welcome-container">
+            <div>
+                <img src="./css/images/nysl_logo.png" class="logo" id="logo-welcome">
+
+            </div> 
+            <br>  
+            <div>
+                
+                <h1>
+                    Northside Youth Soccer League
+                </h1>
+              <form action="#home" onsubmit="cargaNombre(event),insertarNombre()">    
+                    <label class="m-2" for="loadName"> Enter Your Name and Find Out All About Our League. </label>
+                      <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" autocomplete="off" id="inpName" placeholder="Enter your name">
+                      </div>
+                    <br>
+                    <button class="btn btn-success" for="inpName" type="submit" onclick="ocultarSecciones('home')">Go to NYSL!!</button>             
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section name="secciones" id="home">
+      <div id="container">
+
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarHome" aria-controls="offcanvasNavbarHome">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarHome" aria-labelledby="offcanvasNavbarHomeLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                
+                <div class="img-name-nav">
+                  <img class="img-nav" src="./css/images/nysl_logo.png" alt="">
+                  <h4 class="p-2" name="nombre-nav">Nombre</h4>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="active-nav"> Home</li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('about')">About NYSL</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('registration')">Registration</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('info')">Game Information</a></li>
+                    <li><a  data-bs-dismiss="offcanvas" onclick="ocultarSecciones('rules')">Rules</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('contact')">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="text-center d-flex align-items-center" id="bodycontent">
+          <img src="./css/images/nysl_logo.png" class="logo" alt="">
+          <div id="upcoming">
+           
+            <h1 class="titulo">Upcoming Events</h1>
+            <h3 class="body-title"><br>August 4</h3>
+            <hr>
+            <p class="indent"><br>NYSL Fundraiser</p>
+            
+            <h3 class="body-title"><br> August 16</h3>
+            <hr>
+            <p class="indent"><br>Season Kick-off: Meet the Teams</p>
+            
+            <h3 class="body-title"><br>September 1</h3>
+            <hr>
+            <p class="indent"><br> First Game of the Season (Check Game Schedule for details)<br></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section name="secciones" id="about">
+      <div id="container"> 
+
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarAbout" aria-controls="offcanvasNavbarAbout">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarAbout" aria-labelledby="offcanvasNavbarAboutLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="img-name-nav">
+                  <img class="img-nav" src="./css/images/nysl_logo.png" alt="">
+                  <h4 class="p-2" name="nombre-nav">Nombre</h4>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('home')">Home</a></li>
+                  <li class="active-nav">About NYSL</li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('registration')">Registration</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('info')">Game Information</a></li>
+                    <li><a data-bs-dismiss="offcanvas"  onclick="ocultarSecciones('rules')">Rules</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('contact')">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <img src="./css/images/nysl_logo.png" alt="" class="img-right">
+          </div>
+        </nav>
+        
+        <div id="bodycontent">
+        <br>
+        <h1>About</h1>
+        <hr>
+        <br>
+        <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active"  data-bs-interval="60000">
+              <h3>Mission</h3>
+              <p class="indent">To support young athletes living in Chicago's northside neighborhoods, who have an interest in learning and playing soccer, with opportunities to learn and practice skills related to the game of soccer, specifically those skills around team cooperation and good sportsmanship.</p>
+        
+            </div>
+            <div class="carousel-item" data-bs-interval="60000">
+              <h3>Vision</h3>
+              <p class="indent">The Northside Youth Soccer League aspires to develop strong, well-rounded, and mindful athletes through the building of character, self-discipline, and leadership.</p>
+              
+            </div>
+            <div class="carousel-item" data-bs-interval="60000">
+              <h3>General Information</h3>
+        <p class="indent">The Northside Youth Soccer League was established in 1996 to provide athletes residing in Chicago's northside neighborhoods an environment in which to learn and play soccer. To be a member of NYSL, you must be between the ages of 4 - 12 and reside in a Chicago northside neighborhood. NYSL is run by a small full-time staff, and relies on the generous volunteer time of parents and previous league members.</p>
+    
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section name="secciones" id="info">
+      <div id="container">
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarInfo" aria-controls="offcanvasNavbarInfo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarInfo" aria-labelledby="offcanvasNavbarInfoLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="img-name-nav">
+                  <img class="img-nav" src="./css/images/nysl_logo.png" alt="">
+                  <h4 class="p-2" name="nombre-nav">Nombre</h4>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('home')">Home</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('about')">About NYSL</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('registration')">Registration</a></li>
+                    <li class="active-nav">Game Information</li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('rules')">Rules</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('contact')">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <img src="./css/images/nysl_logo.png" alt="" class="img-right">
+          </div>
+        </nav>
+    
+        
+        <div id="bodycontent">
+          <h1 class="titulo">NYSL Game Information</h1>
+         <h2><em>Fall Schedule</em></h2>
+         <p class="announcement">*All games take place on Saturday</p>
+    
+         <div id="infotable">
+          <div id="carousel-calendar" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    
+            <div class="carousel-inner"> 
+              <div class="carousel-item active" data-bs-interval="1000000000">
+                <table>
+                  <tr>
+                   <td colspan="3">SEPTEMBER</td>
+                  </tr>
+                  <tr name="thead">
+                   <th>Day</th>
+                   <th>Teams - Location</th>
+                   <th>Times</th>
+                 </tr>
+                <tbody id="tbody">
+                </tbody>                     
+                </table>
+              </div>
+              <div class="carousel-item" data-bs-interval="1000000000">
+                <table>     
+                  <tr>
+                    <td colspan="3">OCTOBER</td>
+                  </tr> 
+                  <tr name="thead">
+                      <th>Day</th>
+                      <th>Teams - Location</th>
+                      <th>Times</th>
+                  </tr> 
+                  <tbody id="tbody2">
+                    
+                   </tbody>               
+              </table>
+                  
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-calendar" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-calendar" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>       
+        </div>
+        
+        <p><strong>Facility Type:</strong> Outdoor</p>
+        <p><strong>Additional Information:</strong> If deemed necessary by NYSL, games may be shortened or cancelled due to extreme weather conditions.</p> 
+        <p><strong>Please direct all questions to:</strong> Michael Randall, League Coordinator</p>
+        <address>
+          <p><span><strong>Phone:</strong> (630) 690-8132</span></p>
+          <p><strong>Email:</strong> <a class="email" href="mailto:michael.randall@chisoccer.org">michael.randall@chisoccer.org</a></p>
+        </address>
+        </div>
+      </div>
+    </section>
+    <section name="secciones" id="registration">
+      <div id="container">  
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarRegistration" aria-controls="offcanvasNavbarRegistration">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarRegistration" aria-labelledby="offcanvasNavbarRegistrationLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="img-name-nav">
+                  <img class="img-nav" src="./css/images/nysl_logo.png" alt="">
+                  <h4 class="p-2" name="nombre-nav">Nombre</h4>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('home')">Home</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('about')">About NYSL</a></li>
+                    <li class="active-nav">Registration</li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('info')">Game Information</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('rules')">Rules</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('contact')">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <img src="./css/images/nysl_logo.png" alt="" class="img-right">
+          </div>
+        </nav>
+        
+        <div id="bodycontent">
+              
+          <h1 class="titulo">
+            Registration Form
+          </h1>
+          <form method="get" id="formulario" action="show_data.html"> 
+            <div id="form-container">
+              <div class="inputs-texts" id="pagina1">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingFirstName" placeholder="Player's First Name">
+                  <label for="floatingFirstName">Player's First Name</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingLastName" placeholder="Last Name">
+                  <label for="floatingLastName">Last Name</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingStreet" placeholder="Street Address">
+                  <label for="floatingStreet">Street Address</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingCity" placeholder="City">
+                  <label for="floatingCity">City</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingZip" placeholder="Zip Code">
+                  <label for="floatingZip">Zip Code</label>
+                </div>
+                  <input type="date" class="form-control" id="floatingBirthDate" placeholder="Birth Date (mm/dd/yyyy)">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingParent" placeholder="Parent/Guardian Name">
+                  <label for="floatingParent">Parent/Guardian Name</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingContactPhone" placeholder="Contact Phone">
+                  <label for="floatingContactPhone">Contact Phone</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingContactEmail" placeholder="Contact Email">
+                  <label for="floatingContactEmail">Contact Email</label>
+                </div>
+                <div class="progress mt-2">
+                    <div class="progress-bar progressbar-completo" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar progressbar-restante" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div> 
+               
+              
+              <div id="pagina2">
+                    <button type="button" class="btn btn-form" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Gender
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="black" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          
+                          <div class="modal-body">
+                            <label for="female">Female</label>
+                            <input type="radio" name="gender" id="female" value="female"/>
+                            <hr>
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender" id="male" value="male"/>
+                            <hr>
+                          </div>
+                          <div>
+                            <!-- <button type="button" class="btn btn-form-modal-close" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn btn-form-modal" data-bs-dismiss="modal">Accept</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>     
+                 <button type="button" class="btn btn-form" data-bs-toggle="modal" data-bs-target="#Grade">
+                      Grade
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="black" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                    </button>
+                    <div class="modal fade" id="Grade" tabindex="-100">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          
+                          <div class="modal-body">
+                            <label for="pre_school">Pre-School</label>
+                            <input type="radio" name="grade" id="pre_school" value="pre_school"/>
+                            <hr>
+                            <label for="1st">1st</label>
+                            <input type="radio" name="grade" id="1st" value="1st"/>
+                            <hr>
+                            <label for="2nd">2nd</label>
+                            <input type="radio" name="grade" id="2nd" value="2nd"/>
+                            <hr>
+                            <label for="3rd">3rd</label>
+                            <input type="radio" name="grade" id="3rd" value="3rd"/>
+                            <hr>
+                            <label for="4th">4th</label>
+                            <input type="radio" name="grade" id="4th" value="4th"/>
+                            <hr>
+                            <label for="5th">5th</label>
+                            <input type="radio" name="grade" id="5th" value="5th"/>
+                            <hr>
+                          </div>
+                          <div>
+                            <!-- <button type="button" class="btn btn-form-modal-close" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn btn-form-modal" data-bs-dismiss="modal">Accept</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <hr>
+                    <legend>Which elementary schools do you live near?</legend>
+                    <br>
+                     <div class="renglon">
+                      <label for="school_1"> FirstSchool:</label>    
+                      <label for="school_2"> SecondSchool:</label>
+                    </div>  
+                    <div class="renglon">
+                            <select name="school_1" class="btn-form" id="school_1">
+                              <option value="katzenmaier">AJ Katzenmaier</option>
+                              <option value="greenbay">Greenbay</option>
+                              <option value="yeager">Howard A Yeager</option>
+                              <option value="hart">Marjorie P Hart</option>
+                              <option value="north">North Elementary</option>
+                              <option value="south">South Elementary</option>
+                            </select>
+      
+                            <select name="school_2" class="btn-form" id="school_2">
+                              <option value="katzenmaier">AJ Katzenmaier</option>
+                              <option value="greenbay">Greenbay</option>
+                              <option value="yeager">Howard A Yeager</option>
+                              <option value="hart">Marjorie P Hart</option>
+                              <option value="north">North Elementary</option>
+                              <option value="south">South Elementary</option>
+                            </select>                
+                    </div>
+      
+                    <hr>
+                    <legend>What position(s) do you normally play? <span class="note">(check all that apply)</span></legend>
+                    <button type="button" class="btn btn-form" data-bs-toggle="modal" data-bs-target="#PositionNormal">
+                      Position Normal
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="black" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                    </button>
+                    <div class="modal fade" id="PositionNormal" tabindex="-100">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          
+                          <div class="modal-body">
+                            <label for="n_forward">Forward</label>
+                            <input type="checkbox" name="normal_position" id="n_forward" value="n_forward"/>
+                            <hr>
+                            <label for="n_defense">Defense</label>
+                            <input type="checkbox" name="normal_position" id="n_defense" value="n_defense"/>
+                            <hr>
+                            <label for="n_midfield">Midfield</label>
+                            <input type="checkbox" name="normal_position" id="n_midfield" value="n_midfield"/>
+                            <hr>
+                            <label for="n_goalkeeper">Goalkeeper</label>
+                            <input type="checkbox" name="normal_position" id="n_goalkeeper" value="n_goalkeeper"/>
+                            <hr>
+                          </div>
+                          <div>
+                            <!-- <button type="button" class="btn btn-form-modal-close" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn btn-form-modal" data-bs-dismiss="modal">Accept</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <hr>
+                    <legend>What position(s) do you want to play? <span class="note">(check all that apply)</span></legend>
+                    <button type="button" class="btn btn-form" data-bs-toggle="modal" data-bs-target="#PositionWant">
+                      Position Want
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="black" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                    </button>
+                    <div class="modal fade" id="PositionWant" tabindex="-100">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          
+                          <div class="modal-body">
+                            <label for="n_forward">Forward</label>
+                            <input type="checkbox" name="normal_position" id="n_forward" value="n_forward"/>
+                            <hr>
+                            <label for="n_defense">Defense</label>
+                            <input type="checkbox" name="normal_position" id="n_defense" value="n_defense"/>
+                            <hr>
+                            <label for="n_midfield">Midfield</label>
+                            <input type="checkbox" name="normal_position" id="n_midfield" value="n_midfield"/>
+                            <hr>
+                            <label for="n_goalkeeper">Goalkeeper</label>
+                            <input type="checkbox" name="normal_position" id="n_goalkeeper" value="n_goalkeeper"/>
+                            <hr>
+                          </div>
+                          <div>
+                            <!-- <button type="button" class="btn btn-form-modal-close" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn btn-form-modal" data-bs-dismiss="modal">Accept</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <hr>
+                    <label for="uniform" class="impinfo">Already Have a Uniform</label>
+                    <input type="checkbox" name="uniform" id="uniform"/>
+                    <br>
+      
+                      <button type="button" class="btn btn-form" data-bs-toggle="modal" data-bs-target="#Jersey">
+                        Jersey Size 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="black" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                      </button>
+                      <div class="modal fade" id="Jersey" tabindex="-100">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">              
+                            <div class="modal-body">
+                              <span class="uniformchoice">
+                                <label for="j_y_small">Youth Small</label>
+                                <input type="radio" name="jersey_size" id="j_y_small" value="j_y_small"/>
+                                <hr>
+                                <label for="j_y_medium">Youth Medium</label>
+                                <input type="radio" name="jersey_size" id="j_y_medium" value="j_y_medium"/>
+                                <hr>
+                                <label for="j_y_large">Youth Large</label>
+                                <input type="radio" name="jersey_size" id="j_y_large" value="j_y_large"/>
+                                <hr>
+                                <label for="j_small">Small</label>
+                                <input type="radio" name="jersey_size" id="j_small" value="j_small"/>
+                                <hr>
+                                <label for="j_medium">Medium</label>
+                                <input type="radio" name="jersey_size" id="j_medium" value="j_medium"/>
+                                <hr>
+                                <label for="j_large">Large</label>
+                                <input type="radio" name="jersey_size" id="j_large" value="j_large"/>
+                                <hr>
+                                <label for="j_x_large">Extra-Large</label>
+                                <input type="radio" name="jersey_size" id="j_x_large" value="j_x_large"/>
+                                <hr>
+                              </span>
+                            </div>
+                            <div>
+                              <!-- <button type="button" class="btn btn-form-modal-close" data-bs-dismiss="modal">Close</button> -->
+                              <button type="button" class="btn btn-form-modal" data-bs-dismiss="modal">Accept</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <button type="button" class="btn btn-form" data-bs-toggle="modal" data-bs-target="#Shorts">
+                        Shorts Size
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="black" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                      </button>
+                      <div class="modal fade" id="Shorts" tabindex="-100">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">              
+                            <div class="modal-body">
+                              <span class="uniformchoice">
+                                <label for="s_y_small">Youth Small</label>
+                                <input type="radio" name="shorts_size" id="s_y_small" value="s_y_small"/>
+                                <hr>
+                                <label for="s_y_medium">Youth Medium</label>
+                                <input type="radio" name="shorts_size" id="s_y_medium" value="s_y_medium"/>
+                                <hr>
+                                <label for="s_y_large">Youth Large</label>
+                                <input type="radio" name="shorts_size" id="s_y_large" value="s_y_large"/>
+                                <hr>
+                                <label for="s_small">Small</label>
+                                <input type="radio" name="shorts_size" id="s_small" value="s_small"/>
+                                <hr>
+                                <label for="s_medium">Medium</label>
+                                <input type="radio" name="shorts_size" id="s_medium" value="s_medium"/>
+                                <hr>
+                                <label for="s_large">Large</label>
+                                <input type="radio" name="shorts_size" id="s_large" value="s_large"/>
+                                <hr>
+                                <label for="s_x_large">Extra-Large</label>
+                                <input type="radio" name="shorts_size" id="s_x_large" value="s_x_large"/>
+                              </span>
+                            </div>
+                            <div>
+                              <!-- <button type="button" class="btn btn-form-modal-close" data-bs-dismiss="modal">Close</button> -->
+                              <button type="button" class="btn btn-form-modal" data-bs-dismiss="modal">Accept</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
+      
+                    
+                  <div class="progress mt-2">
+                     <div class="progress-bar progressbar-completo" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                     <div class="progress-bar progressbar-restante" role="progressbar" style="width: 34%" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
+                   </div> 
+              </div>
+              <div id="pagina3">
+                  <h2 class="titulo">Permission to Play</h2>
+                  <div class="contract">
+                    <p>
+                      I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the rules of the Northside Youth Soccer League (NYSL). In recognizing the possibility of physical injury associated with soccer and in consideration for the "League" accepting the registrant for its soccer programs and activities, I hereby release, discharge, and/or otherwise indemnify NYSL, their employees and associated personnel and volunteers, including the facilities used for practices and games, against any claim by or on behalf of the registrant as a result of the registrant's participation in the program and/or being transported to or from NYSL sponsored activities, which transportation.       
+                    </p>
+                    <p>
+                      By entering my name below, I hereby agree and authorize the above. In addition, by entering my name below, I also acknowledge that I have read the cancellation policy and agree to its terms.
+                    </p>
+                    <p>
+                      <label for="signature">Parent/Guardian Signature:</label>
+                      <input type="text" name="signature" id="signature"/>
+                      <br>
+                      <br>
+                      <label for="sig_date">Date:</label>
+                      <input type="date" name="sig_date" id="sig_date" placeholder="Date (mm/dd/yyyy)">
+                    </p>
+                  </div>
+                  <p><input type="submit" value="Send"/></p>
+                  <div class="progress mt-2">
+                    <div class="progress-bar progressbar-completo" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+      
+                
+              
+      
+      
+            </div>
+      
+            <nav aria-label="Page navigation example">
+              <ul class="pagination  mt-2">
+                  <li id="page-1" class="page-item active-pagination"><a class="page-link" href="#">1</a></li>
+                  <li id="page-2" class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li id="page-3" class="page-item"><a class="page-link" href="#">3</a></li>            
+              </ul>
+            </nav>
+          </form>
+        </div>
+      </div>
+          
+    </section>
+    <section name="secciones" id="rules">
+      <div id="container">
+
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarRules" aria-controls="offcanvasNavbarRules">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarRules" aria-labelledby="offcanvasNavbarRulesLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="img-name-nav">
+                  <img class="img-nav" src="./css/images/nysl_logo.png" alt="">
+                  <h4 class="p-2" name="nombre-nav">Nombre</h4>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('home')">Home</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('about')">About NYSL</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('registration')">Registration</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('info')">Game Information</a></li>
+                    <li class="active-nav">Rules</li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('contact')">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <img src="./css/images/nysl_logo.png" alt="" class="img-right">
+          </div>
+        </nav>
+        
+        <div id="bodycontent">
+         <div id="titlecenter">
+           <h1 class="titulo">Northside Youth Soccer League</h1>
+           <h2 class="titulo">Rules of Play &amp; Policies</h2>
+           <p>FIFA rules shall govern NYSL play except as modified herein.</p>
+           <hr>
+         </div>
+         
+         <div id="rules">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <h2>Sportsmanship</h2>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>The common interest that members of the Association share is to inspire youth to practice the ideals of sportsmanship and fair play. Any player, coach, team, parent, spectator, administrator or referee whose behavior detracts from this purpose is subject to disciplinary action regardless of technical soccer background, expertise, accomplishments or standing.</li>
+                   </ul>
+                </div>
+              </div>
+            </div>       
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <h2>Fifa Field Regulations</h2>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ol>
+                    <li><h3>Dimensions.</h3> FIFA Law 1 provides for flexible external field dimensions within a given maximum and minimum width and length. These dimensions should be adhered to for all fields used by teams under 12 and older. 
+                    </li>
+                    
+                    <li><h3>Competition Fields.</h3> Fields used within the competition program must be a minimum of 100 x 60 yards. Leagues, districts or associations participating in the state competition program that are unable to provide a field that meets these minimum requirements must advise the State Competition Board which will assign its Fields Committee to inspect the field and recommend to the Board whether or not a waiver of the minimum dimensions should be granted. Teams from leagues, districts or associations that are unable to provide an acceptable field may be required to play all their games away.
+                    </li>
+                    
+                    <li><h3>Fields Used By Young Age Groups.</h3>
+                    <ol type="a">
+                      <li>U-6 play on a field approximately 20 X 40 yards with no penalty areas. Fields for older age groups should be progressively larger.</li>
+                      <li>U-8 plays on a field 40-50 yards in length and 20-30 yards width.</li>
+                      <li>U-10 play on a field 70-80 yards in length and 40-50 yards in width.</li>
+                      <li>In addition, fields used by young age groups may have their internal dimensions and size of goal similarly modified.</li>
+                    </ol>
+                    </li>
+                    
+                    <li><h3>Team Bench Areas</h3>
+                    <ol type="a">
+                     <li>Recreation &amp; District Programs
+                       <ul>
+                         <li>The decision for team/spectator placement on the field will be made by the governing body of that team. A team's bench area shall consist of that area at least one (1) yard away from the touchline and extending to twenty yards (20) both ways from the halfway line. In the event that field 2 conditions require team benches to be on the same side of the field, a team's bench area shall consist of that area two(2) yards away from the touchline and extending twenty yards one (1) way from the halfway line.</li>
+                         <li>The home team has first choice as to where it wishes to locate its bench area. Coaches and substitutes are required to remain within their bench area during the game. Parents and spectators should occupy the same side of the field as the team they are supporting.</li>
+                       </ul>
+                       </li>
+                     <li>State Competition League Only
+                       <ul>
+                         <li>Except where it is determined by the referee to be impractical, team bench areas shall be along the same touchline. Each team bench area shall be located two yards outside the touchline, beginning not closer than five yards from midfield and extending not further than twenty yards from midfield. The home team shall have the right to choose the location of its bench area. Coaches and substitutes must remain within their team's bench area during the game.</li>
+                         <li>Parents and spectators must occupy the sideline opposite the team bench areas. Supporters of a team must assemble on the side of the midfield facing the team bench area of that team. There shall be a buffer zone extending ten yards on each side of the midfield that may not be occupied by parents or spectators. Match officials shall be empowered to enforce these provisions and may suspend or terminate games in the event that any team, coach, parent, or spectator declines to abide by requests from match officials to comply with these standards.</li>
+                       </ul>
+                       </li>
+                     </ol>
+                     </li>
+                   </ol>            
+                  </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <h2>Equipment</h2>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>We will abide by and accept equipment standards as defined by FIFA, USSF and USYSA.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#NumberPlayers" aria-expanded="false" aria-controls="NumberPlayers">
+                  <h2>Number of Players</h2>
+                </button>
+              </h2>
+              <div id="NumberPlayers" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><h3>Team Size.</h3> Except as noted below, below, team rosters shall consist of not less than eleven nor more than eighteen players. A team must have at least seven (7) players present and able to play before referees are permitted to start a sanctioned game. No more than eleven (11) players per team may be on the field at any one time during the game.</li>
+                    <li><h3>Size of Age Group Teams.</h3> In order to give player's maximum opportunity to develop in the game of soccer, U-6 through U-1O play modified rules and size of roster as stated in United States Youth Soccer Association (USYSA) rules. It is strongly recommended that U-6 and U-8 play 4 v 4. UYSA shall not sanction games involving teams under 10 or younger unless such games are conducted with not more than eight (8) players per side. (National rule 4036 section 2)</li>
+                    <li>Recreational/Developmental players at other ages or where numbers in the playing area are low are strongly encouraged to play small-sided games on reduced field size.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Substitutions" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Substitutions</h2>
+                </button>
+              </h2>
+              <div id="Substitutions" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Teams may make an unlimited number of substitutions at the times indicated below. A player who has been replaced may re-enter the game as a substitute at a later time.
+                    <ol>
+                      <li>Prior to a throw-in your favor.</li>
+                      <li>Prior to a goalkick by either team.</li>
+                      <li>After a goal by either team.</li>
+                      <li>After an injury, by either team, when the referee stops play.</li>
+                      <li>At half time.</li>
+                      <li>When a player has been &quot;cautioned&quot;, only the player receiving &quot;caution&quot; may be substituted.</li>
+                    </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Confiscated" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Confiscated Player Passes</h2>
+                </button>
+              </h2>
+              <div id="Confiscated" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Passes of any individual(s) ejected from any match shall be retained after the match by the referee. The pass of any individual who has received a third caution (yellow card) during a playing year shall be confiscated by the referee at the conclusion of the match in which the third caution was received. That player will be suspended from playing in the next game in which the offending participant would otherwise be eligible to participate. This process will continue so that for every third yellow card received during a playing year, the player will be suspended from playing in the next game (after the receipt of a third yellow card) for which the offending participate would otherwise be eligible to participate. The referee shall deliver all confiscated passes to the UYSA State Office within forty-eight (48) hours of the conclusion of the match.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#All-Play" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>All-Play</h2>
+                </button>
+              </h2>
+              <div id="All-Play" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>All-play means that every recreation player on every team shall play at least fifty percent of each game. Coaches in the competition program are encouraged to play their players 50% of each game.
+                    <ul style="list-style-type:circle;">
+                      <li>A Coach shall be permitted to not play a player 50% of each game under special circumstances, e.g., unexcused absences from practice and/or games, ungentlemanly conduct at practice and/or games, and injuries.</li>
+                    </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Equipment" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Player's Equipment</h2>
+                </button>
+              </h2>
+              <div id="Equipment" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Where the uniform colors of both teams are so similar that the referee orders a change, the designated home team must change to colors distinct from those of the opponent.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Mixed" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Mixed Teams</h2>
+                </button>
+              </h2>
+              <div id="Mixed" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><h3>Girls Playing On Boys' Teams.</h3> Girls are eligible to play on boys'teams with parent/guardian permission.</li>
+                    <li><h3>Types of Teams.</h3> Teams with females only are Girls Teams. All others are Boys Teams.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Coaching" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Coaching from the Sidelines</h2>
+                </button>
+              </h2>
+              <div id="Coaching" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Coaching from the sidelines, i.e., giving direction to one's own team on points of strategy and position, is permitted provided that:
+                    <ol>
+                      <li>No mechanical, electrical or other devices are used to amplify the voice.</li>
+                      <li>The tone of voice is informative and not a harangue.</li>
+                      <li>The coaching takes place within the team's bench area.</li>
+                      <li>No coach, substitute, player or spectator is to make derogatory remarks or gestures to the referees, linesmen, players, substitutes or spectators.</li>
+                      <li>No coach, player, substitute or spectator is to use profanity or incite, in any manner, disruptive behavior of any kind.</li>
+                    </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Termination" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Game Termination</h2>
+                </button>
+              </h2>
+              <div id="Termination" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Any game terminated after 15 minutes into the second half by the referee by reason of the elements, or by reason of grave disorder on the part of the coaches, players or spectators of a team that is losing at the point that the game is terminated, shall stand as a completed game. If a team is ahead and the game is called because of their actions they will lose the game 1-0. 
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Conditions" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Conditions of Replay of Games</h2>
+                </button>
+              </h2>
+              <div id="Conditions" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Any game which is required to be replayed as a result of any protest orappeal, shall be subject to the following conditions:
+                    <ol>
+                      <li>The game shall be replayed on the same field, as was the suspended or protested game, unless otherwise agreed by the coaches.</li>
+                      <li>Impartial referees shall be assigned to the new game.</li>
+                      <li>The PROTEST AND APPEALS COMMITTEE shall have the power to impose such additional conditions on the replay of the game, as it deems appropriate under the circumstances.</li>
+                    </ol>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Number">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Referee" aria-expanded="false" aria-controls="Substitutions">
+                  <h2>Referee Responsibilities</h2> 
+                </button>
+              </h2>
+              <div id="Referee" class="accordion-collapse collapse" aria-labelledby="Number" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li> The referee shall verify the identity of the players and coaches with his/her player pass. He shall collect the passes of those players and coaches who are to participate in the game. The referee must allow no player into the game for whom he/she has no pass.</li>
+                    <li>Upon completion of the game, the referee shall send his/her report to the UYSA offices within four (4) days, holidays excluded. If a coach or a player is ejected, the referee report form is required within forty-eight (48) hours along with the player/coach pass.</li>
+                    <li>A referee report form must be filed for every game played.</li>
+                    <li>Each team must determine whether or not referees are registered prior to the start of each game. Upon request, referees officiating at any game must willingly and without bias, show documentation regarding their certification level and registration standing with the USSF to coach, assistant coach, or team captain of teams participating in that game. Prior to the game a coach may decide to postpone the game if the referees do not produce the requested documentation. The game is to be replayed at a later date.</li>
+                    <li>Referees not complying with this section will be referred to the Disciplinary Committee.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          </div>
+        </div>
+       </div>
+ 
+    </section> 
+    <section name="secciones" id="contact">       
+      <div id="container">
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarContact" aria-controls="offcanvasNavbarContact">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarContact" aria-labelledby="offcanvasNavbarContactLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="img-name-nav">
+                  <img class="img-nav" src="./css/images/nysl_logo.png" alt="">
+                  <h4 class="p-2" name="nombre-nav">Nombre</h4>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('home')">Home</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('about')">About NYSL</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('registration')">Registration</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('info')">Game Information</a></li>
+                    <li><a data-bs-dismiss="offcanvas" onclick="ocultarSecciones('rules')">Rules</a></li>
+                    <li class="active-nav">Contact</li>
+                </ul>
+              </div>
+            </div>
+            <img src="./css/images/nysl_logo.png" alt="" class="img-right">
+          </div>
+          
+        </nav>
+        
+        <div id="bodycontent">
+          <h4>Contact</h4>
+          <hr>
+        <p>Please email us at <a class="email" href="mailto:nysl@chisoccer.org">nysl@chisoccer.org</a></p>
+          
+        <p>We will reply to your email as soon as we can.</p>
+        <div class="align-items-center">
+        <img src="https://c.tenor.com/q-zZSTX6jSIAAAAC/mail-download.gif" class="logo" alt="">      
+        </div>
+    
+        </div>
+      </div>
+    </section>
+    <section name="secciones" id="showData">
+        <a class="btn-volver" onclick="ocultarSecciones('registration')">BACK</a>
+        <p align=center>&nbsp;</p>
+        <h1 align=center><font size="+1">The following information has been sent as your
+          feedback:</font></h1>
+        
+        <table align=center style="border-collapse:collapse;" >
+          <tr>
+            <th align="center">Form Field</th>
+            <th align="center">Field Value</th>
+          </tr>
+        
+        <script language="javascript">
+        var args = location.search.substr(1).split('&');
+        for (var i = 0; i < args.length; ++i) {
+          var parts = args[i].split('=');
+          if (parts != null) {
+            var field = parts[0];
+            var value = parts[1];
+            if (value == null) {
+              value = "null"
+            }
+            else {
+              value = '"' + unescape(value.replace(/\+/g, ' ')) + '"';
+            }
+        
+            document.writeln('<tr><td align="center">' + field + '</td>');
+            document.writeln('<td align="center">' + value + '</td></tr>');
+          }
+        }
+        </script>
+        
+        <noscript>
+        <tr>
+          <td>
+            <p>You need to turn on Javascript in your browser.</p>
+        
+            <p>In Microsoft Internet Explorer 4 or greater:</p>
+          <ul>
+            <li>From the "Tools" menu (in IE 4, it's the "View" menu), select "Internet Options".</li>
+            <li>Click on the "Security" tab.</li>
+            <li>Click on the "Custom Level" button. (In IE 4, select "Custom"
+            and then click on "Settings...".)</li>
+            <li>Under "Active scripting" make sure "Enable" is selected.</li>
+          </ul>
+        
+            <p>In Netscape version 4 or greater:</p>
+          <ul>
+            <li>From the <b>Edit</b> menu, select <b>Preferences</b>.</li>
+            <li>In the <b>Category</b> list on the left, click on the word "Advanced".</li>
+            <li>In the panel on the right, make sure "Enable JavaScript" is checked.</li>
+            <li>Click the <b>OK</b> button.</li>
+          </ul>
+        
+        </td>
+        </tr>
+        </noscript>
+        
+        </table>
+    </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>
