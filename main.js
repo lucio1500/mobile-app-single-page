@@ -1,8 +1,14 @@
 function changeSize()
 {
-  matchMedia('(max-height: 426px) and (orientation: landscape)').matches
-  ? render(gameInformation)
-  : renderTableInfo(gameInformation)
+  if(matchMedia('(max-height: 426px) and (orientation: landscape)').matches)
+  {
+    render(gameInformation)
+  }
+  else
+  {
+    renderTableInfo(gameInformation[0].GameList,"tbody")
+    renderTableInfo(gameInformation[1].GameList,"tbody2")
+  }
 }
 
 addEventListener('resize',changeSize);
@@ -68,12 +74,11 @@ function paginacion()
 
 }
 
-function renderTableInfo(gameInformation)
+function renderTableInfo(gameInformation, bodyId)
 {
   let dayAnterior=0;
-  document.getElementById("tbody").innerHTML=``;
-  document.getElementById("tbody2").innerHTML=``;
-  gameInformation[0].GameList.forEach((data) => {
+  document.getElementById(bodyId).innerHTML=``;
+  gameInformation.forEach((data) => {
       let tr = document.createElement("tr");   
       if(dayAnterior!=data.Day)
       {
@@ -84,22 +89,7 @@ function renderTableInfo(gameInformation)
            <td>${data.Teams} <br> <a target="_blank" href=${data.Map}>${data.Location}</a></td>
            <td>${data.Times}</td>
            `;      
-      document.getElementById("tbody").appendChild(tr);
-    });
-    dayAnterior=0;
-    gameInformation[1].GameList.forEach((data) => {
-      let tr = document.createElement("tr");
-      if(dayAnterior!=data.Day)
-      {
-      tr.innerHTML = `
-      <td rowspan="2">${data.Day}</td>`
-      dayAnterior=data.Day;
-      }      
-      tr.innerHTML +=`
-      <td>${data.Teams} <br> <a target="_blank" href=${data.Map}>${data.Location}</a></td>
-      <td>${data.Times}</td>
-      </tr>`;
-      document.getElementById("tbody2").appendChild(tr);
+      document.getElementById(bodyId).appendChild(tr);
     });
 }
 
@@ -116,7 +106,7 @@ function render(gameInformation)
       tr.id = "columna"+index;
       let id = "sep"+index;
       tr.innerHTML = `
-      <td class="col-2" id="${id}" name="septemberColum" onclick="renderInfo(gameInformation[0],${index},'contenido')">${data.Teams} </td>
+      <td class="col-2" id="${id}" name="septemberColum" onclick="renderInfo(gameInformation[0],${index},'contenido','septemberColum','sep')">${data.Teams} </td>
       </tr>`;
       document.getElementById("tbody").appendChild(tr);
     });
@@ -125,7 +115,7 @@ function render(gameInformation)
       tr.id = "columnaB"+index;
       let id = "oct"+index;
       tr.innerHTML = `
-      <td class="col-2" id="${id}" name="octoberColum" onclick="renderInfo(gameInformation[1],${index},'contenido2')">${data.Teams} </td>
+      <td class="col-2" id="${id}" name="octoberColum" onclick="renderInfo(gameInformation[1],${index},'contenido2','octoberColum','oct')">${data.Teams} </td>
       </tr>`;
       document.getElementById("tbody2").appendChild(tr);
     });
@@ -137,11 +127,11 @@ function render(gameInformation)
     tr2.rowSpan = 9;
     tr2.id = "contenido2";
     document.getElementById("columnaB0").appendChild(tr2);
-    renderInfo(gameInformation[0],0,"contenido");
-    renderInfo(gameInformation[1],0,"contenido2");  
+    renderInfo(gameInformation[0],0,"contenido","septemberColum","sep");
+    renderInfo(gameInformation[1],0,"contenido2","octoberColum","oct");  
 }
 
-function renderInfo(obj, objClick,idRow)
+function renderInfo(obj, objClick,idRow,columName,month)
 {
   let div = document.createElement("div");
   div.id = "contenido-game";
@@ -158,21 +148,10 @@ function renderInfo(obj, objClick,idRow)
   document.getElementById(idRow).innerHTML=``;
   document.getElementById(idRow).append(div);
 
-  if(obj.Mounth=="SEPTEMBER")
-  {
-    document.getElementsByName("septemberColum").forEach(element => {
+  document.getElementsByName(columName).forEach(element => {
       element.className = element.className.replace( /(?:^|\s)active-nav(?!\S)/g , '' );
     });
-    document.getElementById("sep"+objClick).className="active-nav";
-  }
-
-  if(obj.Mounth=="OCTOBER")
-  {
-    document.getElementsByName("octoberColum").forEach(element => {
-      element.className = element.className.replace( /(?:^|\s)active-nav(?!\S)/g , '' );
-    });
-    document.getElementById("oct"+objClick).className="active-nav";
-  }
+  document.getElementById(month+objClick).className="active-nav";
 }
 
 function ocultarSecciones(id)
